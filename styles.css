@@ -938,6 +938,15 @@ body[data-active-theme="organic"] .nav-cta {
     transition: transform 0.35s ease;
 }
 
+.case-preview-image-logo {
+    object-fit: contain;
+    object-position: center;
+    padding: 28px;
+    background:
+        radial-gradient(circle at top, rgba(92, 129, 211, 0.12), transparent 44%),
+        #0c1016;
+}
+
 .case-card:hover .case-preview-image {
     transform: scale(1.02);
 }
