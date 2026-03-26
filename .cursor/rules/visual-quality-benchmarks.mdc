@@ -1,0 +1,623 @@
+---
+description: Visual Quality & Interaction Standards - Reference Benchmark Principles
+alwaysApply: true
+---
+
+# Visual Quality & Interaction Standards
+
+Ovaj sajt konkuriše sa najboljim studio websitovima na tržištu.
+Kvalitet sajta je naš glavni brend i način oglašavanja.
+
+Referentni standardi su preuzeti iz analize najboljih svetskih agencija.
+Ovaj dokument definiše konkretne principe vizuelne izvrsnosti i interakcije koje treba primeniti.
+
+---
+
+## PRIORITETNE REFERENCE
+
+### Huemor (https://huemor.rocks) - NAJVIŠI PRIORITET
+
+**Šta preuzimamo:**
+- Layer-based depth system (multiple planes of depth)
+- Parallax sa smislom (ne agresivan, ali primetno jak)
+- Background elements koji prate scroll (astronaut effect, floating shapes)
+- Smooth depth transitions između sekcija
+- Decoupled scroll - foreground i background se kreću različitim brzinama
+- Premium animacije sa jasnom hijerarhijom dubine
+
+**Tehnička implementacija:**
+```css
+/* Layer system */
+.layer-back { transform: translateZ(-100px) scale(1.1); }
+.layer-mid { transform: translateZ(-50px) scale(1.05); }
+.layer-front { transform: translateZ(0); }
+
+/* Parallax control */
+element.style.transform = `translateY(${scrollY * factor}px)`;
+```
+
+**Pravilo:**
+- Minimum 3 depth layers po key sekciji
+- Background elementi moraju biti funkcionalni (grade identitet, ne samo dekor)
+- Scroll speed differential: 0.3x - 0.6x za background, 1x za content
+
+### DD.NYC (https://dd.nyc) - VISOK PRIORITET
+
+**Šta preuzimamo:**
+- Cursor-following interactive elements
+- Magnetic hover effects
+- Smooth mouse-tracking animations
+- Premium motion response na pointer movement
+- Element attraction/repulsion based on cursor proximity
+
+**Tehnička implementacija:**
+```javascript
+// Cursor tracking
+element.addEventListener('mousemove', (e) => {
+  const rect = element.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  
+  const centerX = rect.width / 2;
+  const centerY = rect.height / 2;
+  
+  const deltaX = (x - centerX) / centerX;
+  const deltaY = (y - centerY) / centerY;
+  
+  element.style.transform = `translate(${deltaX * 20}px, ${deltaY * 20}px)`;
+});
+```
+
+**Pravilo:**
+- Magnetic effects na CTAs i hero elements
+- Cursor tracking na minimum 2-3 key sections
+- Smooth easing: cubic-bezier(0.25, 0.46, 0.45, 0.94)
+- Performance must stay above 60fps
+
+---
+
+## CORE VISUAL PRINCIPLES (svi benchmark sajtovi)
+
+### 1. HERO STANDARD
+
+Na osnovu Clay, Instrument, DD.NYC, Huemor:
+
+**Mora imati:**
+- Instant visual impact (< 0.5s do utiska)
+- Clear hierarchy: hero title → subtitle → CTA
+- Premium typography (minimum 48px desktop hero)
+- Micro-animations na load (subtle, sophisticated)
+- Clear value proposition bez generičkih fraza
+
+**Layout pattern:**
+```
+[Large statement text 60-120px]
+[Supporting line 18-24px, lighter weight]
+[Primary CTA] [Secondary action]
+```
+
+**Animacije:**
+- Fade in + slight upward movement (20-40px)
+- Stagger timing između elemenata (100-200ms delay)
+- Easing: ease-out ili custom cubic-bezier
+- Total animation time: 0.6s - 1.2s
+
+### 2. SECTION TRANSITIONS
+
+Standard iz Huemor, Instrument, 500designs:
+
+**Scroll-triggered reveals:**
+- IntersectionObserver sa threshold 0.1-0.3
+- Fade + translate (ne samo fade)
+- Stagger children animations
+- Respect prefers-reduced-motion
+
+**CSS standard:**
+```css
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+```
+
+### 3. TYPOGRAPHY HIERARCHY
+
+Standard iz svih benchmark sajtova:
+
+**Desktop:**
+- Hero: 60-120px
+- H1: 48-72px
+- H2: 36-48px
+- H3: 24-32px
+- Body: 16-20px
+- Small: 14-16px
+
+**Mobile scale down:**
+- Hero: 36-56px
+- H1: 32-40px
+- H2: 24-32px
+- Body: 16-18px
+
+**Font weights:**
+- Display/Hero: 500-700
+- Headings: 500-600
+- Body: 400
+- Captions: 400-500
+
+**Line height:**
+- Headings: 1.1 - 1.3
+- Body: 1.5 - 1.7
+
+### 4. SPACING SYSTEM
+
+Standard iz DD.NYC, Clay, 500designs:
+
+```css
+--space-xs: 8px;
+--space-sm: 16px;
+--space-md: 24px;
+--space-lg: 40px;
+--space-xl: 64px;
+--space-2xl: 96px;
+--space-3xl: 128px;
+
+--section-padding-mobile: 60px 20px;
+--section-padding-desktop: 120px 40px;
+```
+
+**Minimum section padding:**
+- Desktop: 100-140px vertical
+- Mobile: 60-80px vertical
+
+### 5. HOVER & INTERACTION STATES
+
+Standard iz svih premium sajtova:
+
+**Buttons:**
+```css
+.btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+```
+
+**Cards:**
+- Hover lift: 4-8px
+- Shadow enhancement
+- Optional border color shift
+- Scale: 1.02 - 1.05 (optional, subtle)
+
+**Links:**
+- Underline animation (left to right ili center out)
+- Color transition
+- Subtle weight change (optional)
+
+### 6. SCROLL PROGRESS & FEEDBACK
+
+Standard iz Instrument, Huemor, DD.NYC:
+
+**Mora imati:**
+- Smooth scroll behavior
+- Progress indicator (optional ali poželjno)
+- Section-based navigation highlights
+- Subtle parallax ili depth changes through scroll
+
+**Ne preopterećivati:**
+- Scroll hijacking je zabranjen
+- Native scroll behavior mora ostati prirodan
+- Accessibility mora biti očuvana
+
+### 7. GRID & LAYOUT SYSTEM
+
+Standard iz Clay, 500designs, BopDesign:
+
+**Desktop grid:**
+- 12-column system
+- Max-width: 1200-1440px
+- Gutter: 24-40px
+- Margins: 40-80px
+
+**Mobile:**
+- Single column sa card/tile breakpoints
+- Gutter: 16-24px
+- Margins: 20-24px
+
+**Layout patterns:**
+- Asymmetric layouts za visual interest
+- Text-image splits (60/40 ili 50/50)
+- Full-bleed sections alternating sa constrained content
+
+---
+
+## INTERACTION PATTERNS (direktno sa benchmark sajtova)
+
+### Clay-style Transitions
+
+**Section reveals:**
+- Fade up sa opacity
+- Element staggering
+- Smooth bezier curves
+- Respect scroll speed
+
+### Instrument-style Fluidity
+
+**Characteristics:**
+- Very smooth transitions (0.6s - 1s)
+- Subtle scale changes
+- Refined easing functions
+- Elegant state changes
+
+### Huemor-style Depth
+
+**Layer system:**
+- Background, midground, foreground
+- Different scroll speeds
+- 3D transform space setup
+- Proper z-index hierarchy
+
+### DD.NYC-style Magnetic Effects
+
+**Cursor interaction:**
+- Elements follow cursor within bounds
+- Magnetic pull on hover
+- Smooth tracking with damping
+- Works on hero elements, cards, CTAs
+
+---
+
+## ANIMATION PERFORMANCE STANDARDS
+
+Svi benchmark sajtovi drže visoke performance standarde:
+
+**Obavezno:**
+- 60fps minimum
+- GPU-accelerated properties only (transform, opacity)
+- Avoid layout thrashing
+- Use will-change sparingly
+- RequestAnimationFrame za JS animations
+
+**Zabranjeno:**
+- Animating width, height, top, left directly
+- Heavy animations on mobile without testing
+- Scroll listeners without throttle/debounce
+- Simultaneous animations of 50+ elements
+
+**Optimizacija:**
+```css
+.animated-element {
+  will-change: transform, opacity;
+  transform: translateZ(0); /* Force GPU layer */
+}
+```
+
+---
+
+## MIKRO-ANIMACIJE
+
+Standard iz DD.NYC, Huemor, Clay:
+
+**Button interactions:**
+- Hover: 0.2-0.3s transition
+- Active: slight scale down (0.98)
+- Focus: outline + subtle glow
+
+**Card interactions:**
+- Image scale na hover (1.05-1.1)
+- Shadow expansion
+- Border reveal ili color shift
+
+**Scroll indicators:**
+- Pulsing ili bouncing animation
+- Fade out na scroll
+- Subtle, non-intrusive
+
+---
+
+##CASE STUDY / PORTFOLIO PRESENTATION
+
+Standard iz Clay, 500designs, Instrument:
+
+**Grid patterns:**
+- Masonry ili bento grid
+- Alternating sizes
+- Featured vs standard entries
+- Clear hover states
+
+**Info hierarchy na card:**
+```
+[Visual / Thumbnail]
+[Project Title]
+[Brief descriptor]
+[Tags/Categories]
+[Link/CTA]
+```
+
+**Hover reveal:**
+- Overlay sa dodatnim info
+- Image zoom ili shift
+- Smooth color overlay
+- CTA reveal
+
+---
+
+## COLOR & VISUAL ATMOSPHERE
+
+Standard iz svih benchmark sajtova:
+
+**Background treatment:**
+- Solid color blocks alternating
+- Subtle gradients (ne preterano)
+- Texture overlays (grain, noise - subtle)
+- Depth kroz color contrast
+
+**Accent usage:**
+- 1 primary accent color
+- Optional secondary accent
+- Used sparingly za CTAs, highlights, hover states
+- Consistent throughout site
+
+**Shadows & depth:**
+```css
+--shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+--shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+--shadow-lg: 0 8px 32px rgba(0,0,0,0.16);
+--shadow-xl: 0 16px 48px rgba(0,0,0,0.2);
+```
+
+---
+
+## RESPONSIVE BEHAVIOR
+
+Standard iz BopDesign, Storm Brain, Creative Momentum:
+
+**Breakpoints:**
+```css
+--mobile: 375px;
+--tablet: 768px;
+--desktop: 1024px;
+--wide: 1440px;
+```
+
+**Mobile-specific:**
+- Touch-friendly tap targets (min 44x44px)
+- Simplified animations (redukovani ili isključeni parallax)
+- Optimized image loading
+- Hamburger menu mora biti premium quality
+- Swipe gestures gde ima smisla
+
+**Performance targets:**
+- Mobile Lighthouse score: 90+
+- Desktop Lighthouse score: 95+
+- First Contentful Paint: < 1.5s
+- Time to Interactive: < 3s
+
+---
+
+## NAVIGATION STANDARDS
+
+Standard iz Clay, Instrument, DD.NYC:
+
+**Desktop nav:**
+- Clean, minimal
+- Fixed ili hide on scroll down / reveal on scroll up
+- Smooth background transition na scroll
+- Premium hover states
+- Clear active state
+
+**Mobile nav:**
+- Full-screen overlay ili slide-in panel
+- Large, tappable items
+- Smooth open/close animation (0.3-0.5s)
+- Close button jasno vidljiv
+- Optional blur ili dim background
+
+---
+
+## CTA STANDARDS
+
+Standard iz svih benchmark sajtova:
+
+**Primary CTA:**
+- Visually dominant
+- Clear, action-oriented text
+- Strong hover state
+- Consistent positioning
+- Adequate size (min 48px height)
+
+**Button styles (primeri):**
+```css
+/* Solid primary */
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Outline secondary */
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--border);
+  padding: 14px 30px;
+}
+```
+
+**States:**
+- Default → Hover (lift, shadow, color shift)
+- Active (scale down)
+- Disabled (reduced opacity, no interaction)
+
+---
+
+## CONTENT PRESENTATION PATTERNS
+
+### Text Blocks (Clay, Instrument standard)
+
+**Principles:**
+- Max-width 700px za body text
+- Clear paragraph spacing (1.5-2em)
+- Subheadings break up content
+- Pull quotes ili highlights za emphasis
+- Ne predugi pasusi (3-5 lines max)
+
+### Image Treatment (DD.NYC, 500designs standard)
+
+**Principles:**
+- High quality images only (no pixelation)
+- Consistent aspect ratios
+- Lazy loading after first viewport
+- WebP format sa fallback
+- Alt text obavezan
+
+### Video Integration (Instrument, Creative Momentum standard)
+
+**Principles:**
+- Autoplay background video: muted, loop, no controls
+- Featured video: controls, quality options
+- Poster frame za pre-load
+- Lazy load video sources
+- Mobile: reduce quality ili show poster only
+
+---
+
+## FOOTER STANDARDS
+
+Standard iz Storm Brain, BopDesign, Clay:
+
+**Mora sadržati:**
+- Contact info
+- Navigation links
+- Social links
+- Legal links (privacy, terms)
+- Optional newsletter signup
+
+**Design standard:**
+- Clear hierarchy
+- Premium spacing
+- Subtle separation od main content
+- Clean, readable layout
+- Not an afterthought - well designed
+
+---
+
+## LOADING & PERFORMANCE
+
+Standard iz svih premium sajtova:
+
+**Loading states:**
+- Premium loader ili skeleton screens
+- No generic spinners unless styled premium
+- Progressive content reveal
+- Smooth transition from load to ready
+
+**Optimization obavezno:**
+- Image optimization (WebP, srcset, lazy load)
+- Font loading strategy (swap ili optional)
+- Critical CSS inline
+- Deferred non-critical JS
+- Resource hints (preconnect, prefetch)
+
+---
+
+## ACCESSIBILITY BASELINE
+
+Standard iz svih profesionalnih sajtova:
+
+**Minimum requirements:**
+- Semantic HTML
+- ARIA labels gde potrebno
+- Keyboard navigation support
+- Focus states clearly visible
+- Color contrast WCAG AA minimum
+- Alt text na images
+- Skip links za navigation
+- Respect prefers-reduced-motion
+
+---
+
+## QUALITY FILTERS
+
+Pre nego što se bilo šta smatra završenim:
+
+### Visual Quality Check:
+- Da li deluje kao premium studio website?
+- Da li bi ovo moglo biti u Awwwards showcase?
+- Da li interaction quality parira best-in-class primeru?
+- Da li je mobile iskustvo isto tako premium?
+
+### Technical Quality Check:
+- Performance score 90+ na Lighthouse?
+- Sve animations smooth 60fps?
+- Accessibility errors: 0
+- Console errors: 0
+- Responsive breakpoints: tested and working?
+
+### Brand Quality Check:
+- Da li održava brand identity?
+- Da li deluje kao isto autor kao prethodna sekcija?
+- Da li copy zvuči profesionalno?
+- Da li je CTA jasan i jak?
+
+---
+
+## KONKRETAN RADNI STANDARD
+
+Kada radiš na bilo kom vizuelnom ili interaktivnom delu:
+
+**Pitaj:**
+1. Kako bi ovo uradio Clay?
+2. Kako bi ovo uradio Huemor sa svojim layer systemom?
+3. Kako bi DD.NYC dodao cursor interaction?
+4. Da li ovo parira top 1% globalnih studio websitova?
+
+**Ako odgovor na #4 nije "da", preradi.**
+
+**Ne prihvataj:**
+- "Dovoljno dobro"
+- "Prolazi"
+- "Može bolje ali ok"
+
+**Prihvataj samo:**
+- "Ovo je premium"
+- "Ovo konkuriše najboljima"
+- "Ovo je benchmark quality"
+
+---
+
+## FINALNA PROVERA
+
+Pre završetka bilo koje sekcije ili feature-a:
+
+- [ ] Visual quality: top 5% global studio standard?
+- [ ] Interaction quality: smooth, premium, thoughtful?
+- [ ] Performance: 60fps, optimized, fast load?
+- [ ] Mobile: premium experience maintained?
+- [ ] Accessibility: baseline standards met?
+- [ ] Brand consistency: feels like same author?
+- [ ] Copy quality: professional, clear, strong?
+- [ ] Technical: clean code, maintainable?
+
+**Ako ma koja stavka nije ✓, onda nije gotovo.**
+
+---
+
+Ovaj sajt mora biti showcase quality website koji može biti naš najbolji marketing materijal.
+Svaki pixel, svaka animacija, svaka interakcija mora biti na nivou sa najboljim svetskim studio websitovima.
+
+Ne radimo demo.
+Ne radimo template.
+Ne radimo "dovoljno dobro".
+
+Radimo benchmark quality premium studio website.

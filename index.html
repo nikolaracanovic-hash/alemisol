@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alemisol — Web dizajn, brand sistemi i custom razvoj za brendove kojima treba jasnoća i izvršenje.">
+    <title>Alemisol — Web & Brand Sistemi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-lang="sr">
+    <canvas id="cursorCanvas" class="cursor-canvas"></canvas>
+    
+    <div class="floating-cta" id="floatingCta">
+        <span data-i18n="hero.cta1">Započni projekat</span>
+    </div>
+    
+    <a href="#main" class="skip-to-main" data-i18n="skip">Preskoči na sadržaj</a>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">Alemisol DOO</div>
+            <button class="lang-switch" id="langSwitch">
+                <span class="lang-option active" data-lang="sr">SR</span>
+                <span class="lang-divider">/</span>
+                <span class="lang-option" data-lang="en">EN</span>
+            </button>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu">
+                <a href="#services" data-i18n="nav.services">Usluge</a>
+                <a href="#work" data-i18n="nav.work">Radovi</a>
+                <a href="#process" data-i18n="nav.process">Proces</a>
+                <a href="#about" data-i18n="nav.about">O nama</a>
+                <a href="#contact" class="nav-cta" data-i18n="nav.contact">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <section id="hero" class="section" data-theme="medieval">
+            <div class="section-bg"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-label" data-i18n="hero.label">Web dizajn i razvoj</div>
+                    <h1 class="hero-title" data-i18n="hero.title">
+                        <span class="hero-title-line">Vi se fokusirajte na budućnost,</span>
+                        <span class="hero-title-line">ostavite nama sajt.</span>
+                    </h1>
+                    <p class="hero-subtitle" data-i18n="hero.subtitle">Za firme, timove i agencije kojima treba više od lepog dizajna: jasan sajt, promišljena struktura i izrada spremna za stvarnu upotrebu. Od prvog koncepta do gotovog sistema, posao vodimo mirno, uredno i bez nepotrebnog komplikovanja.</p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">Započni projekat</a>
+                        <a href="#work" class="btn btn-secondary" data-i18n="hero.cta2">Poslednji projekti</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section section-services" data-theme="futuristic">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="services.title">Usluge</h2>
+                    <p class="section-intro" data-i18n="services.intro">Radimo usluge koje mogu da nose ozbiljan sajt od početne ideje do gotove isporuke. Svaka je postavljena tako da klijent dobije jasniji sistem, bolji utisak i sajt koji može normalno da se koristi i dalje razvija.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card service-card-blue">
+                        <h3 data-i18n="services.s1.title">Web sajtovi</h3>
+                        <p data-i18n="services.s1.desc">Od ideje do gotovog sajta, struktura, dizajn i razvoj slažu se u jednu jasnu celinu. Rezultat je sajt koji izgleda ozbiljno, radi stabilno i timu ostavlja dobru osnovu za sadržaj, rast i dalje izmene bez stalnog vraćanja na početak.</p>
+                    </div>
+                    <div class="service-card service-card-purple">
+                        <h3 data-i18n="services.s2.title">Vizuelni identitet brenda</h3>
+                        <p data-i18n="services.s2.desc">Logo, tipografija, boje i osnovna pravila daju brendu jasan i dosledan vizuelni pravac. Tako sajt, prezentacije i ostali materijali deluju povezano, čisto i ozbiljno, bez lutanja od formata do formata.</p>
+                    </div>
+                    <div class="service-card service-card-gold">
+                        <h3 data-i18n="services.s3.title">Prodajne stranice</h3>
+                        <p data-i18n="services.s3.desc">Fokusirane stranice za proizvode, usluge i kampanje, sa jasnom porukom i sadržajem složenim tako da vodi korisnika ka sledećem koraku. Dobre su kada jedna ponuda mora da se razume brzo i bez suvišnog objašnjavanja.</p>
+                    </div>
+                    <div class="service-card service-card-green">
+                        <h3 data-i18n="services.s4.title">Unapređenje postojećih sajtova</h3>
+                        <p data-i18n="services.s4.desc">Postojeće sajtove pretvaramo u jasnije, savremenije i upotrebljivije sisteme. Sređujemo ono što koči utisak i rad: strukturu, hijerarhiju, izgled i završnu izradu, kako bi sajt posle dorade bio spreman za dalje ozbiljno korišćenje.</p>
+                    </div>
+                    <span class="service-separator service-separator-1" aria-hidden="true"></span>
+                    <span class="service-separator service-separator-2" aria-hidden="true"></span>
+                    <span class="service-separator service-separator-3" aria-hidden="true"></span>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="section section-work" data-theme="futuristic">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="work.title">Odabrani projekti</h2>
+                    <p class="section-intro" data-i18n="work.intro">Iza svakog projekta stoji konkretan zadatak: jasnija struktura, ozbiljniji utisak, bolja čitljivost sadržaja ili sajt koji korisnika vodi bez zabune. Ispod je primer rada koji pokazuje kako takve stvari rešavamo u praksi.</p>
+                </div>
+                <div class="work-grid">
+                    <article class="case-card">
+                        <div class="case-visual">
+                            <a class="case-preview-link" href="https://zaustaviprevaru.rs" target="_blank" rel="noreferrer">
+                                <img
+                                    class="case-preview-image"
+                                    src="https://image.thum.io/get/width/1200/https://zaustaviprevaru.rs"
+                                    alt="Preview sajta zaustaviprevaru.rs"
+                                    loading="lazy"
+                                />
+                            </a>
+                        </div>
+                        <div class="case-content">
+                            <div class="case-tags">
+                                <span class="tag" data-i18n="work.c1.tag1">Struktura sadržaja</span>
+                                <span class="tag" data-i18n="work.c1.tag2">Web sajt</span>
+                            </div>
+                            <h3><a class="case-title-link" href="https://zaustaviprevaru.rs" target="_blank" rel="noreferrer">zaustaviprevaru.rs</a></h3>
+                            <p class="case-position" data-i18n="work.c1.position">Informativni sajt o internet prevarama i digitalnoj bezbednosti</p>
+                            <p class="case-scope" data-i18n="work.c1.scope">Rađeno: analiza sadržaja, struktura sajta, dizajn interfejsa i responzivna izrada</p>
+                            <p class="case-desc" data-i18n="work.c1.desc">Klijent je imao veliki broj tekstova, ozbiljnu temu i potrebu da sve ostane pregledno i lako za korišćenje. Projekat je vođen tako da sadržaj dobije jasan raspored, da ključne celine budu odmah vidljive i da sajt zadrži ozbiljan ton bez težine u korišćenju.</p>
+                            <p class="case-result" data-i18n="work.c1.result">Fokus projekta bio je da kompleksan sadržaj postane čitljiv, uverljiv i spreman za dalje širenje bez raspada strukture.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="section section-process" data-theme="organic">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="process.title">Kako radimo</h2>
+                    <p class="section-intro" data-i18n="process.intro">Jasan proces, od prvog razgovora do gotovog sajta. Bez magle, bez improvizacije i bez razvlačenja koje klijentu troši vreme.</p>
+                </div>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <h3 data-i18n="process.p1.title">Jasnoća pre svega</h3>
+                        <p data-i18n="process.p1.desc">Razgovor, brief i definisanje scope-a postavljaju osnovu projekta. Pre dizajna mora da bude jasno šta pravimo, za koga i sa kojim ciljem. Tu se rešavaju prioriteti, sadržaj i okvir isporuke, kako kasnije ne bismo popravljali stvari koje su morale da budu jasne od početka.</p>
+                    </div>
+                    <div class="process-step">
+                        <h3 data-i18n="process.p2.title">Dizajn i sistem</h3>
+                        <p data-i18n="process.p2.desc">Gradimo strukturu, vizuelni pravac i osnovne UI komponente koje drže sajt na okupu i daju mu jasan identitet. U ovoj fazi se određuje ritam stranice, način prikaza sadržaja i vizuelna pravila koja kasnije čuvaju doslednost celog sajta.</p>
+                    </div>
+                    <div class="process-step">
+                        <h3 data-i18n="process.p3.title">Razvoj i isporuka</h3>
+                        <p data-i18n="process.p3.desc">Pretvaramo dogovoreni sistem u funkcionalan, responzivan i produkcijski spreman sajt, sa završnim proverama i detaljima na mestu. Završni rezultat nije samo lep prikaz, već sajt koji može da se koristi, održava i mirno nastavi da raste posle isporuke.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section section-about" data-theme="organic">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 data-i18n="about.title">Studio koji spaja dizajn i izradu</h2>
+                        <p data-i18n="about.p1">Alemisol DOO je studio koji spaja dizajn i razvoj. Radimo sa osnivačima, timovima i agencijama kojima treba jasan sajt, dobra osnova brenda ili kvalitetan redizajn koji neće stati na lepom ekranu, već će imati smisla i u svakodnevnoj upotrebi.</p>
+                        <p data-i18n="about.p2">Posao postavljamo jasno od početka. Pre rada definišemo scope, pravac i način isporuke, kako bi ceo projekat imao stabilnu osnovu. Kada nešto nije dobro postavljeno, kažemo to odmah, jer je to za klijenta korisnije od lepog obećanja koje kasnije pravi problem.</p>
+                        <p data-i18n="about.p3">Radimo iz Srbije, sa klijentima lokalno i globalno. Većina saradnji odvija se na srpskom ili engleskom jeziku, kroz direktan kontakt i jasan proces. Klijent zna šta se radi, kada se radi i šta dobija na kraju, bez nepotrebnih slojeva komunikacije.</p>
+                    </div>
+                    <div class="about-details">
+                        <div class="detail-block">
+                            <h4 data-i18n="about.stack.title">Pristup</h4>
+                            <p data-i18n="about.stack.desc">Alate i tehnologiju biramo prema potrebama projekta, sa fokusom na jasan sistem, stabilnu izradu i isporuku bez suvišne komplikacije.</p>
+                        </div>
+                        <div class="detail-block">
+                            <h4 data-i18n="about.tools.title">Dizajn i izrada</h4>
+                            <p data-i18n="about.tools.desc">Struktura, izgled i izrada posmatraju se kao jedna celina, kako bi krajnji rezultat bio pregledan, upotrebljiv i spreman za dalji rad.</p>
+                        </div>
+                        <div class="detail-block">
+                            <h4 data-i18n="about.availability.title">Podrška za nove firme</h4>
+                            <p data-i18n="about.availability.desc">Za novootvorene firme ostavljamo prostor za povoljniji početak saradnje, kada projekat i obim to dopuštaju.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section section-contact" data-theme="technical">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-text">
+                        <h2 data-i18n="contact.title">Imate projekat?</h2>
+                        <p data-i18n="contact.desc">Pošaljite nam nekoliko rečenica o projektu i onome što vam treba. Ako postoji dobar osnov za saradnju, vratićemo se jasnim odgovorom, predlogom narednih koraka i realnim okvirom za dalje.</p>
+                    </div>
+                    <div class="contact-form-wrapper">
+                        <form class="contact-form" id="contactForm" method="post" action="https://formsubmit.co/Alemisol@gmail.com" novalidate>
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_subject" value="Alemisol upit">
+                            <div class="form-group">
+                                <label for="name" data-i18n="contact.form.name">Ime</label>
+                                <input type="text" id="name" name="name" autocomplete="name" minlength="2" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" data-i18n="contact.form.email">Email</label>
+                                <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" data-i18n="contact.form.phone">Telefon</label>
+                                <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel">
+                            </div>
+                            <div class="form-group">
+                                <label for="project" data-i18n="contact.form.project">O projektu</label>
+                                <textarea id="project" name="project" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Pošaljite poruku</button>
+                            <p class="contact-form-status" id="contactFormStatus" aria-live="polite"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">Alemisol DOO</div>
+                    <p data-i18n="footer.tagline">Sajtovi, prodajne stranice i vizuelni sistemi</p>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:Alemisol@gmail.com">Alemisol@gmail.com</a>
+                    <a href="privacy.html" data-i18n="footer.privacy">Privatnost</a>
+                    <a href="cookies.html" data-i18n="footer.cookies">Kolačići</a>
+                    <a href="terms.html" data-i18n="footer.terms">Uslovi korišćenja</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">&copy; 2026 Alemisol. Sva prava zadržana.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
