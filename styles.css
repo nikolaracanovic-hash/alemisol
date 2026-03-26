@@ -932,41 +932,6 @@ body[data-active-theme="organic"] .nav-cta {
     background: #0c1016;
 }
 
-.case-preview-mark {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 8px;
-    padding: 28px;
-    background:
-        radial-gradient(circle at top right, rgba(92, 129, 211, 0.12), transparent 34%),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
-        #0c1016;
-    transition: transform 0.35s ease;
-}
-
-.case-preview-mark-line {
-    display: block;
-}
-
-.case-preview-mark-name {
-    font-size: clamp(32px, 4vw, 52px);
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    line-height: 0.95;
-    color: #f4f7fb;
-}
-
-.case-preview-mark-meta {
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(244, 247, 251, 0.72);
-}
-
 .case-preview-image {
     object-fit: cover;
     object-position: top center;
@@ -983,10 +948,6 @@ body[data-active-theme="organic"] .nav-cta {
 }
 
 .case-card:hover .case-preview-image {
-    transform: scale(1.02);
-}
-
-.case-card:hover .case-preview-mark {
     transform: scale(1.02);
 }
 
