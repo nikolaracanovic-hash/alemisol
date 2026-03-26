@@ -1,9 +1,0 @@
-<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="630" fill="#0F1728"/>
-  <rect x="72" y="72" width="1056" height="486" rx="32" fill="#131E33" stroke="rgba(255,255,255,0.14)" stroke-width="2"/>
-  <path d="M180 198L262 430H226L209.5 380H127.5L111 430H74L156 198H180ZM168.5 256L138.5 347H198.5L168.5 256Z" fill="#F4F7FB"/>
-  <path d="M271 430V198H308V397H497V430H271Z" fill="#F4F7FB"/>
-  <text x="560" y="286" fill="#F4F7FB" font-family="Inter, Arial, sans-serif" font-size="92" font-weight="700" letter-spacing="-2">Alemisol</text>
-  <text x="560" y="352" fill="#A7B4C8" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500" letter-spacing="0.2">Web &amp; Brand Sistemi</text>
-  <text x="560" y="418" fill="#7D8AA3" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="400">Web dizajn, brand sistemi i custom razvoj</text>
-</svg>
