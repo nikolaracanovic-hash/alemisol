@@ -254,13 +254,7 @@ const translations = {
 function getDefaultLanguage() {
     const savedLang = localStorage.getItem('alemisol-lang');
     if (savedLang === 'sr' || savedLang === 'en') return savedLang;
-    
-    const browserLang = navigator.language || navigator.userLanguage;
-    const langCode = browserLang.toLowerCase().split('-')[0];
-    
-    if (langCode === 'sr' || langCode === 'hr' || langCode === 'bs') return 'sr';
-    if (langCode === 'en') return 'en';
-    
+
     return 'sr';
 }
 
